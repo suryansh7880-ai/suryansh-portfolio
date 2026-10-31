@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suryansh Kulshreshtha | Portfolio</title>
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* 1. Header & Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: var(--card-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--primary);
+    }
+
+    /* Container & Section Styles */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    /* 2. Hero Section */
+    .hero {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .role {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 1.5rem auto;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .primary-btn {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .primary-btn:hover,
+    .primary-btn:focus {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    /* 3. About Section */
+    .about-card {
+      background: var(--card-bg);
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .about-card p {
+      margin-bottom: 1rem;
+    }
+
+    .edu-list {
+      list-style-type: none;
+      margin: 1rem 0;
+    }
+
+    .edu-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .edu-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* 4. Skills Section */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-chip {
+      background-color: #eff6ff;
+      color: var(--primary);
+      border: 1px solid #bfdbfe;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* 5. Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech {
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    /* 6. Contact Section */
+    .contact-card {
+      background: var(--card-bg);
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-card p {
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* 7. Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Responsive Media Query */
+    @media (max-width: 640px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Header / Navigation -->
+  <header class="navbar">
+    <div class="logo">Suryansh Kulshreshtha</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Suryansh Kulshreshtha</span></h1>
+        <p class="role">B.Tech 3rd Year (5th Semester) | Frontend Web Enthusiast</p>
+        <p class="intro">
+          Based in Kalpi, Jalaun (Uttar Pradesh). Passionate about responsive web design, semantic structure, and building clean web interfaces.
+        </p>
+        <a href="#projects" class="btn primary-btn">View My Projects</a>
+      </div>
+    </section>
+
+    <!-- 3. About Me Section -->
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <div class="about-card">
+        <p>
+          I am an engineering student currently in my 3rd year (5th semester) of B.Tech. I focus on developing clean, responsive, and user-friendly web pages with pure HTML and modern CSS.
+        </p>
+        <p><strong>Education:</strong></p>
+        <ul class="edu-list">
+          <li><strong>B.Tech:</strong> 3rd Year (5th Semester) — Currently Pursuing</li>
+          <li><strong>Intermediate (12th):</strong> Morning Star Children Senior Secondary Academy, Orai — <strong>68%</strong></li>
+          <li><strong>High School (10th):</strong> Morning Star Children Senior Secondary Academy, Orai — <strong>80%</strong></li>
+        </ul>
+        <p><strong>Location:</strong> Kalpi, Jalaun, Uttar Pradesh, India</p>
+      </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-chip">HTML5</span>
+        <span class="skill-chip">CSS3</span>
+        <span class="skill-chip">Flexbox</span>
+        <span class="skill-chip">CSS Grid</span>
+        <span class="skill-chip">Responsive Web Design</span>
+        <span class="skill-chip">Git & GitHub</span>
+      </div>
+    </section>
+
+    <!-- 5. Projects Section -->
+    <section id="projects" class="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <h3>Voice Typing System</h3>
+          <p class="project-desc">
+            A user interface concept designed for voice transcription and hands-free text input, focusing on accessible layout design and clean readability.
+          </p>
+          <p class="project-tech"><strong>Technologies:</strong> HTML5, CSS3, Flexbox</p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <h3>Student Result Management</h3>
+          <p class="project-desc">
+            A structured layout portal built to showcase student performance metrics, subject scores, and grade reports with clear visual hierarchy.
+          </p>
+          <p class="project-tech"><strong>Technologies:</strong> HTML5, CSS3, CSS Grid</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href="mailto:suryansh7880@gmail.com">suryansh7880@gmail.com</a></p>
+        <p><strong>Location:</strong> Kalpi, Jalaun, Uttar Pradesh</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/suryansh7880-ai" target="_blank" rel="noopener">github.com/suryansh7880-ai</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. Footer -->
+  <footer>
+    <p>&copy; 2026 Suryansh Kulshreshtha. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
